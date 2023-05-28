@@ -1,159 +1,71 @@
-body {
-    margin: 0;
-    height: 100%;
-}
+<html lang="en">
 
-.header {
-    padding: 15px 0;
-    background-color: #ffffff;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1500&display=swap">
+    <title>Employee Payroll App</title>
+    <link rel="stylesheet" href="../css/homePage.css">
+ 
+</head>
 
-.header-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 0px solid green;
-}
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="../Assets/images/logo.png" alt="">
+            <div>
+                <span class="emp-text">EMPLOYEE</span><br>
+                <span class="emp-text emp-payroll">PAYROLL</span>
+            </div>
 
-.logo-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 0px solid green;
-    width: 80%;
-}
+        </div>
 
-.logo-content-img {
-    border: solid 0px #42515f;
+    </header>
+    <div class="main-content">
+        <!---- UC2 ---->
+        <div class="header-content">
+            <div class="emp-detail-text">
+                Employee Details <div class="emp-count">10</div>
+            </div>
+            <a href="../Pages/addEmployee.html" class="add-button"> 
+                <img src="../Assets/icons/add-24px.svg" alt="">Add User</a>
+        </div> <!---- header-content ---->
+    
+    <!---- UC3 ---->
+    <div class="table-main">
+        <table id="display" class="table">
 
-}
+            <!-- <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td><img class="profile" src="../Assets/profile-images/Ellipse -1.png" alt=""></td>
+                <td>Shephali</td>
+                <td>Female</td>
+                <td>
+                    <div class='dept-label'>HR</div>
+                    <div class="dept-label">Finance</div>
+                </td>
+                <td>300000</td>
+                <td>1 Nov 2020</td>
+                <td>
+                    <img id="1" onclick="remove(this)" src="../Assets/icons/delete-black-18dp.svg" alt="delete">
+                    <img id="1" onclick="update(this)" src="../Assets/icons/create-black-18dp.svg"alt="edit">
+                </td>
+            </tr> -->
+        </table>
+    </div>
+    </div>
+    <script type="text/JavaScript" src="../js/homePage.js"></script>
+</body>
 
-.emp-text {
-    font: normal normal bold 20px/25px Montserrat;
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: 0px;
-    color: #82a70c;
-    text-transform: capitalize;
-}
-
-.emp-payroll {
-    color: #42515f;
-
-}
-  /*UC2....*/
-  .main-content{
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh-80px);
-    background-color: #f7f7f7;
-    padding: 30px 10px;
-    box-sizing: border-box;
-}
-
-.header-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding-bottom: 25px;
-}
-.emp-detail-text{
- font:  normal normal bold 24px/25px Roboto;
- letter-spacing: 0px;
- color: #42515f;
- opacity: 1;      
-}
-.emp-count{
-    background-color: #82a70c;
-    color: #ffffff;
-    border-radius: 42%;
-    font-size: 16px;
-    width: 26px;
-    text-align: center;
-    display: inline-block;
-}
-.add-button{
-    font: normal normal normal 22px/29px Roboto;
-    letter-spacing: 0px;
-    color: #ffffff;
-    opacity: 1;
-    background: #82a70c 0% 0% no-repeat padding-box;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 18px;
-    outline: none;
-    cursor: pointer;
-    text-decoration: none;
-}
-/*UC3.....*/
-
-.table-main{
-    width: 80%;
-    margin: 0 auto;
-    overflow: auto;
-}
-.table{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    min-width: 800px
-}
-td,th{
-    text-align: left;
-    padding: 5px 8px;
-    /*border: 1px solid #dddddd;*/
-}
-
-th{
-    background: #42515f 0% 0% no-repeat padding-box;
-    border-radius: 3px 3px 0px 0px;
-
-    text-align: left;
-    font: normal normal medium 18px/24px Roboto;
-    letter-spacing: 0px;
-    color: #ffffff;
-    text-transform: uppercase;
-    opacity: 1;
-    border: 0px solid #dddddd;
-
-}
-
-tr:not(:first-child){
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #e3e3e3;
-    border-radius: 3px;
-
-}
-td{
-    font: normal normal normal 14px/21px Roboto;
-    letter-spacing: 0px;
-    columns: #3d3d3d;
-    opacity: 1;
-}
-td:first-child{
-    display: flex;
-    align-items: center;
-}
-
-td img:first-child{
-    margin-right: 10px;
-}
-
-td img{
-    cursor: pointer;
-}
-
-.dept-label{
-    background-color: #e9fea5;
-    border-radius: 40px;
-    width: fit-content;
-    padding: 1px 7px;
-    text-align: center;
-    font-size: 14px;
-    display: inline-block;
-    font-weight: 300;
-    margin-bottom: 8px;
-}
+</html>
